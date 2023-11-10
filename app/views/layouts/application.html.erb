@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BrewWithMe</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="bootstrap.css">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body style="background-image: url(<%= asset_path 'café.jpg' %>); background-size: cover; filter: contrast(50%) brightness(108%); z-index: -1;">
+    <header class="mb-3 header">
+      <div class="container header-container">
+        <div>
+          <h1 class="mt-3">BrewWithMe</h1>
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <%= link_to 'Recettes', new_post_path, class: "btn btn-secondary" %>
+            <%= link_to 'Articles', posts_path, class: "btn btn-secondary" %>
+            <button type="button" class="btn btn-secondary">Contacts</button>
+          </div>
+        </div>
+        <div>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fas fa-door-open"></i> <!-- Ceci est l'icône de porte de sortie de Font Awesome -->
+          <% end %>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+    <% if notice == 'Bienvenue .' && user_signed_in? %>
+      <p>Bienvenue <%= current_user.email %></p>
+    <% else %>
+      <p><%= notice %></p>
+    <% end %>
+  
+    <footer class="footer">
+  <p>Créé par Sysy La Famille pour The Hacking Project</p>
+</footer>
+    <%= yield %>
+  </body>
+</html>
