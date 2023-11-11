@@ -1,7 +1,18 @@
-<div class="form-container">
-  <h1>Brew with me, vous souhaite la Bienvenue !</h1>
-  <p>Prêt à deguster une délicieuse boisson chaude !</p>
 
-  <%= link_to 'Sign in', new_user_session_path %>
-  <%= link_to 'Sign up', new_user_registration_path %>
+<div class="container-index">
+  <div class="form-container-index">
+    <h1>Brew with me, vous souhaite la Bienvenue !</h1>
+    <h2>Prêt à deguster une délicieuse boisson chaude ?</h2>
+    <br>
+    <p>Ici nous vous permettons de proposer des recettes d'élaboration de boissons chaudes</p>
+    <p>Mais pas seulement, nous vous invitons au voyage par la découvertes des nombreuses recettes</p>
+    <p>déjà présentes ici.</p>
+    <p>N'hésitez pas à nous rejoindre, nous sommes déjà <%= User.count %> dans la communauté BrewWithMe!</p>
+
+    <%= link_to 'Sign in', new_user_session_path %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+  </div>
+  <div class="image-container-index">
+    <%= image_tag 'tasse-neu-01.png', alt: "Tasse de café" %>
+  </div>
 </div>

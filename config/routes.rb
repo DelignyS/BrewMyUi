@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   
   # Defines the root path route ("/")
   root "welcome#index"
+  get 'contact', to: 'pages#contact'
+  get 'creation_thp', to: 'pages#creation_thp'
   
   resources :posts, only: [:new, :create, :index , :destroy, :show] do
     member do

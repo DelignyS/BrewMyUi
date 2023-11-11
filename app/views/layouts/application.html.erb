@@ -16,16 +16,25 @@
     <header class="mb-3 header">
       <div class="container header-container">
         <div>
-          <h1 class="mt-3">BrewWithMe</h1>
+          <h1 class="mt-3">
+                <% if user_signed_in? %>
+                <%= link_to 'BrewWithMe', new_post_path, class: "header-link" %>
+                <% else %>
+                <%= link_to 'BrewWithMe', welcome_index_path, class: "header-link" %>
+             <% end %>
+          </h1>
           <div class="btn-group" role="group" aria-label="Basic example">
             <%= link_to 'Recettes', new_post_path, class: "btn btn-secondary" %>
             <%= link_to 'Articles', posts_path, class: "btn btn-secondary" %>
-            <button type="button" class="btn btn-secondary">Contacts</button>
+            <%= link_to 'Contact', contact_path, class: 'btn btn-secondary' %>
+            <%= link_to 'Création THP', creation_thp_path, class: 'btn btn-secondary' %>
           </div>
         </div>
         <div>
-          <%= link_to destroy_user_session_path, method: :delete do %>
-          <i class="fas fa-door-open"></i> <!-- Ceci est l'icône de porte de sortie de Font Awesome -->
+          <% if user_signed_in? %> 
+              <%= link_to destroy_user_session_path, method: :delete do %>
+             <i class="fas fa-door-open"></i> 
+            <% end %>
           <% end %>
         </div>
       </div>
@@ -37,9 +46,7 @@
       <p><%= notice %></p>
     <% end %>
   
-    <footer class="footer">
-  <p>Créé par Sysy La Famille pour The Hacking Project</p>
-</footer>
+    <%= render 'layouts/footer' %>
     <%= yield %>
   </body>
 </html>
