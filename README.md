@@ -1,24 +1,30 @@
-# README
+# Projet THP
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ce projet utilise le kit UI Sketchy de Bootswatch pour styliser l'application.
 
-Things you may want to cover:
+## Fichier `creation.html.erb`
 
-* Ruby version
+Le fichier `creation.html.erb` contient plusieurs éléments principaux :
 
-* System dependencies
+1. **En-tête** : L'en-tête contient un titre `h1` et un paragraphe avec un lien vers le kit UI Sketchy.
 
-* Configuration
+2. **Cartes** : Il y a trois cartes. La première contient un formulaire, et les deux autres contiennent un court texte.
 
-* Database creation
+3. **Bannière** : La bannière contient plusieurs boutons de différentes couleurs.
 
-* Database initialization
+4. **Barre de navigation** : La barre de navigation contient plusieurs liens et un formulaire de recherche.
 
-* How to run the test suite
+## Intégration du kit UI Sketchy
 
-* Services (job queues, cache servers, search engines, etc.)
+Le kit UI Sketchy est intégré dans le projet en utilisant un lien CDN dans la balise `head` du fichier HTML. Cela permet d'utiliser les styles du kit UI sans avoir à utiliser l'asset pipeline de Rails.
 
-* Deployment instructions
+Voici le lien CDN utilisé :
 
-* ...
+```html
+
+<link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/sketchy/bootstrap.min.css" rel="stylesheet">
+
+Pour utiliser les styles du kit UI, il suffit d'ajouter les classes CSS correspondantes aux éléments HTML.
+
+```
+

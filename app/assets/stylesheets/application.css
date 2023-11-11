@@ -91,11 +91,13 @@ html, body {
   flex-shrink: 0;
   left: 0;
   bottom: 0;
+  margin-top: 0.6em;
   width: 100%;
   background: linear-gradient(to right, darkgray, lightgray);
   color: white;
   text-align: center;
   padding: auto;
+  z-index: 1;
 }
 
 .form-container {
